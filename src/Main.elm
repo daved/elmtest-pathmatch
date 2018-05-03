@@ -71,7 +71,7 @@ pathsMatchTestsResult =
         , PathsMatchTest "wildcard equiv" "INBOX/test" "INBOX/*" True
         , PathsMatchTest "wildcard equiv long" "INBOX/something/test" "INBOX/*/test" True
         ]
-        |> List.filter (\r -> r /= "")
+        |> List.filter (not << String.isEmpty)
         |> String.concat
 
 
